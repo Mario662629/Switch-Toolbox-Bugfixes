@@ -124,7 +124,17 @@ namespace FirstPlugin
         public void Load(System.IO.Stream stream)
         {
             CanSave = true;
-            beaFile = new BezelEngineArchive(stream);
+            try
+            {
+                beaFile = new BezelEngineArchive(stream);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message with details
+                MessageBox.Show($"Unable to open file.\n\n{ex.Message}", "Unable to open file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CanSave = false;
+                return; // Exit the method if loading fails
+            }
             foreach (var file in beaFile.FileList.Values)
                 files.Add(SetupFileEntry(file));
         }

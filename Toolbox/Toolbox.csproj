@@ -683,7 +683,6 @@
     <None Include="Shader\Utility\PbrUtility.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Content Include="Switch_Toolbox.csproj.user" />
     <Content Include="System.Buffers.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
